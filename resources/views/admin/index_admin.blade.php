@@ -212,15 +212,9 @@
                             <li aria-haspopup="true"><a href="{{ url('admin') }}" class="@yield('menu_home')">
                                     <i class="fa fa-home"></i> Home</a>
                             </li>
-
-                            <li aria-haspopup="true"><a href="#" class="sub-icon"><i class="fa fa-table"></i> Tables<span class="wsarrow"></span></a>
-                                <ul class="sub-menu">
-                                    <li aria-haspopup="true"><a href="table.html">Basic Tables</a></li>
-                                    <li aria-haspopup="true"><a href="datatables.html">Data Tables</a></li>
-                                </ul>
-                            </li>
-
-
+                            <li aria-haspopup="true"><a href="{{ url('admin/products') }}" class="@yield('menu_procutcs')"><i class="fa fa-edit"></i> Produtos</a></li>
+                            <li aria-haspopup="true"><a href="{{ url('admin/categories') }}" class="@yield('menu_categories')"><i class="fa fa-edit"></i> categorias</a></li>
+                            <li aria-haspopup="true"><a href="{{ url('admin/materials') }}" class="@yield('menu_materials')"><i class="fa fa-edit"></i> Materiais</a></li>
                             <li aria-haspopup="true"><a href="{{ url('admin/users') }}" class="@yield('menu_users')"><i class="fa fa-user"></i> Usuários</a></li>
                             <li aria-haspopup="true"><a href="{{ url('admin/sair') }}" class=""><i class="fa fa-power-off"></i> Sair</a></li>
                         </ul>
@@ -235,6 +229,7 @@
                         <li class="breadcrumb-item"><a href="{{ url('admin') }}" class="text-muted">Admin</a></li>
                         <li class="breadcrumb-item active text-" aria-current="page">@yield('title')</li>
                         <li class="ml-auto d-lg-flex d-none">
+                            @yield('actions')
 
                         </li>
                     </ol>
