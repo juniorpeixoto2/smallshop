@@ -20,7 +20,7 @@ class MaterialsApiController extends Controller {
         return MaterialsResource::collection($materials);
     }
 
-    public function edit(Request $request, $id) {
+    public function show(Request $request, $id) {
         $categorie =  $this->materials->find($id);
         return response()->json($categorie);
     }

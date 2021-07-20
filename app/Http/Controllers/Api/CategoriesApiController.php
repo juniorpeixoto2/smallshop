@@ -20,7 +20,7 @@ class CategoriesApiController extends Controller {
         return CategoriesResource::collection($categories);
     }
 
-    public function edit(Request $request, $id) {
+    public function show(Request $request, $id) {
         $categorie =  $this->categories->find($id);
         return response()->json($categorie);
     }

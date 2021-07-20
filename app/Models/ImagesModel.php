@@ -4,25 +4,23 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+class ImagesModel extends Model {  use HasFactory;
 
-class ProductsModel extends Model {
-    use HasFactory;
-
-    protected $table = 'products';
+    protected $table = 'images';
     protected $primaryKey = 'id';
     // const CREATED_AT = 'creation_date';
     // const UPDATED_AT = 'last_update';
 
-    protected $fillable = ['ean', 'categorie_id', 'name', 'price', 'material_id', 'size', 'quantity',];
-    protected $date = ['created_at', 'updated_at'];
+    protected $fillable =[ 'product_id', 'name', 'cover',];
+    protected $date =['created_at','updated_at'];
 
     public function scopeGetAll($query, $post) {
-        if ($post->input('ean') != '') {
-            $query->where('ean', 'LIKE', '%' . $post->input('ean') . '%');
+        if ($post->input('product_id') != '') {
+            $query->where('product_id', 'LIKE', '%' . $post->input('product_id') . '%');
         }
 
         $dados =  $query
-            ->orderBy('ean')
+            ->orderBy('product_id')
             ->paginate(10);
         return $dados;
     }
@@ -34,16 +32,12 @@ class ProductsModel extends Model {
     public function scopeGetArray($query) {
         $dados =  $query->get();
 
-        $result = [];
-        $result[''] = 'Selecione!';
+       $result = [];
+       $result[''] = 'Selecione!';
         foreach ($dados as $dado) {
-            $result[$dado->id] = $dado->ean;
+            $result[$dado->id] = $dado->product_id;
         }
 
         return $result;
-    }
-
-    public function images() {
-        return $this->hasMany(ImagesModel::class,  'product_id', 'id');
     }
 }

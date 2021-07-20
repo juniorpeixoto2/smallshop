@@ -14,10 +14,10 @@ class CreateProductsTable extends Migration {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->string('ean')->unique();
-            $table->foreignId('categorie_id')->on('categories');
+            $table->foreignId('categorie_id')->constrained('categories');
+            $table->foreignId('material_id')->constrained('materials');
             $table->string('name');
             $table->double('price');
-            $table->foreignId('material_id')->on('materials');
             $table->double('size')->nullable();
             $table->double('quantity')->default(0);
             $table->timestamps();
