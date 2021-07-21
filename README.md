@@ -2,7 +2,6 @@
 
 Este é um projeto destinado a estudos/avaliação, possui os sequintes módulos:
 
-
 - Cadastro de Produtos
 - Cadastro de Categorias
 - Cadastro de Composição do Produto
@@ -40,11 +39,9 @@ Possui um módulo de log de alterações do produto feitos com Traits e Observab
 
 ### Rotas da API
 
-Base url = "http://localhost:800/api"
+Base url = http://localhost:800/api
 
 
-
-##Rotas da API
 |Metodo|Rota|Body|Retorno
 | Post | v1/auth/token| | json{  "token": "1|WmFVXLqSa2m....."}
 | Post | v1/v1/me | json{
