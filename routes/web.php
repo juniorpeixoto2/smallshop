@@ -21,9 +21,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [SiteController::class, 'index']);
+Route::get('cart', [SiteController::class, 'cart']);
 
 Route::get('adm', [AdmController::class, 'index'])->name('adm');
-Route::post('adm', [AdmController::class, 'login']);
+Route::post('adm', [AdmController::class, 'login'])->name('login');
 
 Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('/', [AdminController::class, 'index']);

@@ -21,8 +21,8 @@ class MaterialsApiController extends Controller {
     }
 
     public function show(Request $request, $id) {
-        $categorie =  $this->materials->find($id);
-        return response()->json($categorie);
+        $material =  $this->materials->find($id);
+        return response()->json($material);
     }
 
     public function store(Request $request) {

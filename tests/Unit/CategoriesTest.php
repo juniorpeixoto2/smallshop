@@ -21,7 +21,7 @@ it('Categories Store', function () {
     $this->assertDatabaseHas('categories', $categorie);
 });
 
-it('Categorie Show', function () {
+it('Categories Show', function () {
     $categorie = CategoriesModel::factory()->create();
 
     loginUser()
@@ -29,7 +29,7 @@ it('Categorie Show', function () {
         ->assertSee([$categorie->name, $categorie->id]);
 });
 
-it('Categorie Update', function () {
+it('Categories Update', function () {
     $categorie = CategoriesModel::factory()->create();
     $updatedCategorie = ['name' => 'Updated Categorie'];
 

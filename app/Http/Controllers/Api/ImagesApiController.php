@@ -40,9 +40,9 @@ class ImagesApiController extends Controller {
         ]);
 
         if (!$categorie = $this->images->find($id))
-            return response()->json(['messagem' => 'Material Não Encontrado']);
+            return response()->json(['messagem' => 'Imagem Não Encontrado']);
 
         $categorie->update($request->all());
-        return response()->json(['messagem' => 'Material Alterado']);
+        return response()->json(['messagem' => 'Imagem Alterado']);
     }
 }
