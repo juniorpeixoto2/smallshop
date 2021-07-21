@@ -42,7 +42,8 @@ Possui um módulo de log de alterações do produto feitos com Traits e Observab
 Base url = http://localhost:800/api
 
 
-|Metodo|Rota|Body|Retorno
+|Metodo|Rota|Body|Retorno|
+| ------------------- | ------------------- |
 | Post | v1/auth/token| | json{  "token": "1|WmFVXLqSa2m....."}
 | Post | v1/v1/me | json{
     "id": 1,
@@ -51,7 +52,7 @@ Base url = http://localhost:800/api
     "email_verified_at": null,
     "created_at": null,
     "updated_at": null
-  }
+  }|
 | Post | v1/categories | json{
   "data": [
     {
@@ -103,15 +104,15 @@ Base url = http://localhost:800/api
     "to": 4,
     "total": 4
   }
-}
+}|
 
 | Post | v1/categories/store | json{
   "messagem": "Categoria Cadastrada"
-}
+}|
 
 | Post | v1/categories/update/{id} | json{
   "messagem": "Categoria Alterada"
-}
+}|
 | Post | v1/materials | json{
   "data": [
     {
@@ -155,13 +156,13 @@ Base url = http://localhost:800/api
     "to": 2,
     "total": 2
   }
-}
+}|
 | Post | v1/materials/store | json{
   "messagem": "Material Cadastrado"
-}
+}|
 | Post | v1/materials/update/{id} | json{
   "messagem": "Material Alterado"
-}
+}|
 | Post | v1/products | json{
   "data": [
     {
@@ -221,11 +222,11 @@ Base url = http://localhost:800/api
     "to": 2,
     "total": 2
   }
-}
+}|
 | Post | v1/products/store | json{
   "messagem": "Produto Cadastrado"
-}
+}|
 | Post | {{ _.base_uel }}v1/images/store | json{
   "messagem": "Imagem Inserida"
-}
+}|
 
