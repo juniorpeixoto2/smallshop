@@ -26,7 +26,7 @@ Route::group([
     'middleware' => ['auth:sanctum']
 ], function () {
     Route::get('me', [AuthApiController::class, 'me']);
-    Route::post('auth/logout', [AuthCompanyController::class, 'auth']);
+    Route::post('auth/logout', [AuthApiController::class, 'auth']);
 
     Route::post('categories', [CategoriesApiController::class, 'index']);
     Route::post('categories/store', [CategoriesApiController::class, 'store']);
