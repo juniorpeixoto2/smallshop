@@ -4,15 +4,18 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-class CategoriesModel extends Model {  use HasFactory;
+use App\Traits\Observable;
+
+class CategoriesModel extends Model {
+    use HasFactory;
+
+    use Observable;
 
     protected $table = 'categories';
     protected $primaryKey = 'id';
-    // const CREATED_AT = 'creation_date';
-    // const UPDATED_AT = 'last_update';
 
-    protected $fillable =[ 'name',];
-    protected $date =['created_at','updated_at'];
+    protected $fillable = ['name',];
+    protected $date = ['created_at', 'updated_at'];
 
     public function scopeGetAll($query, $post) {
         if ($post->input('name') != '') {
@@ -32,8 +35,8 @@ class CategoriesModel extends Model {  use HasFactory;
     public function scopeGetArray($query) {
         $dados =  $query->get();
 
-       $result = [];
-       $result[''] = 'Selecione!';
+        $result = [];
+        $result[''] = 'Selecione!';
         foreach ($dados as $dado) {
             $result[$dado->id] = $dado->name;
         }
