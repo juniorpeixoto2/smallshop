@@ -47,7 +47,6 @@ Base url = http://localhost:800/api
 | Post | v1/auth/token|      |
 | Post | v1/categories       |
 | Post | v1/categories/store | 
-
 | Post | v1/categories/update/{id}|
 | Post | v1/materials |
 | Post | v1/materials/store |
