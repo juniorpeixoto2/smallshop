@@ -42,9 +42,9 @@ Possui um módulo de log de alterações do produto feitos com Traits e Observab
 Base url = http://localhost:800/api
 
 
-|Metodo|Rota|Body|Retorno|
-| ------------------- | ------------------- |
-| Post | v1/auth/token| | json{  "token": "1|WmFVXLqSa2m....."}
+|Metodo|Rota            |Body                 |Retorno|
+| -----|--------------- | ----------------- |
+| Post | v1/auth/token| | json{  "token": "1|WmFVXLqSa2m....."}|
 | Post | v1/v1/me | json{
     "id": 1,
     "name": "admin",
